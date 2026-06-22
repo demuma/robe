@@ -1,4 +1,4 @@
-sudo apt-get install python3-wstool python3-catkin-tools python3-rosdep ros-noetic-moveit-visual-tools ros-noetic-panda-moveit-config ros-noetic-moveit ccache ros-noetic-py-binding-tools python3-pybind11 pybind11-dev -y
+sudo apt-get install python3-wstool python3-catkin-tools python3-rosdep ros-noetic-moveit-visual-tools ros-noetic-panda-moveit-config ros-noetic-moveit ccache ros-noetic-py-binding-tools python3-pybind11 pybind11-dev ros-noetic-rosparam-shortcuts -y
 source /opt/ros/noetic/setup.bash
 mkdir ~/moveit_ws
 cd ~/moveit_ws
@@ -10,5 +10,6 @@ rosdep update
 rosdep install -y --from-paths src --ignore-src --rosdistro noetic -r
 catkin config --extend /opt/ros/noetic --cmake-args -DCMAKE_BUILD_TYPE=Release
 catkin build
-source ./.bashrc
-
+echo 'export PATH="/usr/lib/ccache:$PATH"' >> ~/.bashrc
+echo 'source ~/moveit_ws/devel/setup.bash' >> ~/.bashrc
+source ~/.bashrc
