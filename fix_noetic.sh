@@ -9,7 +9,6 @@ echo \"deb http://packages.ros.org/ros/ubuntu focal main\" | sudo tee /etc/apt/s
 echo \"deb [arch=amd64 signed-by=/usr/share/keyrings/ros-archive-keyring.gpg] http://packages.ros.org/ros2/ubuntu focal main\" | sudo tee /etc/apt/sources.list.d/ros2.list > /dev/null
 "'
 
-# Zweiter Aufruf, um die im Pre-Invoke geschriebenen Listen einzulesen
 sudo apt-get update
 
 exit
